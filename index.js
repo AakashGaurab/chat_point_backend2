@@ -8,10 +8,15 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const app = express();
+
+const fs = require("fs");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const {passport} = require("./google.outh");
+
+
+
 app.use(express.json());
 app.use(cors({ origin: "*" }));
-
-const vipin = "vipin4147@gmail.com";
 
 /* ****************************Email Part ***************************************** */
 const transporter = nodemailer.createTransport({
@@ -55,7 +60,18 @@ app.use(loggerTouse);
 app.use("/admin", admin);
 app.use("/user", user);
 
+/* *************************************google oauth*************************************** */
 
+
+
+app.get('/auth/google',passport.authenticate('google', { scope: ['profile','email'] }));
+
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' ,session:false}),function(req, res) {
+    res.redirect("https://visionary-pixie-5db9b5.netlify.app/entry.html")
+  });
+
+
+ /*  ******************************************************************************** */
 
 
 
