@@ -11,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 
+const vipin = "vipin4147@gmail.com";
 
 /* ****************************Email Part ***************************************** */
 const transporter = nodemailer.createTransport({
@@ -23,7 +24,7 @@ const transporter = nodemailer.createTransport({
 
 let loggerTouse = (req, res, next) => {
   logger.log("info", `A ${req.method} request is made on url:${req.url}`);
-  let email = req.body.email || req.user.email || "vipin4147@gmail.com";
+  let email = req.body.email || req.user.email || vipin;
 
   let mailOptions = {
     from: "vipin4147@gmail.com",
