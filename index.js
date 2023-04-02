@@ -73,7 +73,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { failureRedire
 
  /*  ******************************************************************************** */
 
-/* hope all works  */
+
 
 app.listen(process.env.PORT, async () => {
   try {
