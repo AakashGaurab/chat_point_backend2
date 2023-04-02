@@ -23,11 +23,11 @@ const transporter = nodemailer.createTransport({
 
 let loggerTouse = (req, res, next) => {
   logger.log("info", `A ${req.method} request is made on url:${req.url}`);
-  //let email = req.body.email || req.user.email || "vipin4147@gmail.com";
+  let email = req.body.email || req.user.email || "vipin4147@gmail.com";
 
   let mailOptions = {
     from: "vipin4147@gmail.com",
-    to: "vipin4147@gmail.com",
+    to: email,
     subject: "Email from Chat Point",
     text: "info" + " " + `A ${req.method} request is made on url:${req.url}`,
   };

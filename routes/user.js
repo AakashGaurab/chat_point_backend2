@@ -70,7 +70,7 @@ user.post("/login", async (req, res) => {         //  login a user
   const user = await UserModel.findOne({ email });
   console.log(user)
 
-  const match = await bcrypt.compare( password,user.password);
+  const match = await bcrypt.compare( password,user[0].password);
   console.log(match)
 
   if (match) {
