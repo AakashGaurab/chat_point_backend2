@@ -48,7 +48,7 @@ let loggerTouse = (req, res, next) => {
 app.get("/",(req,res)=>{
   res.json("Welcome to Backend Side Chat-Point");
 })
-app.use(loggerTouse);
+//app.use(loggerTouse);
 app.use("/admin", admin);
 app.use("/user", user);
 
