@@ -13,7 +13,7 @@ app.use(cors({ origin: "*" }));
 
 
 /* ****************************Email Part ***************************************** */
-const transporter = nodemailer.createTransport({
+/* const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "vipin4147@gmail.com",
@@ -41,7 +41,7 @@ let loggerTouse = (req, res, next) => {
     }
   });
   next();
-};
+}; */
 
 /* ************************************************************************************* */
 
