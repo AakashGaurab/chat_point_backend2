@@ -1,7 +1,7 @@
 const connection = require("./config/db.js");
 const mongoose = require("mongoose");
 const express = require("express");
-const { user } = require("./routes/user");
+const { user } = require("./routes/user"); 
 const { admin } = require("./routes/admin");
 const { logger } = require("./middleware/logger.js");
 const nodemailer = require("nodemailer");
