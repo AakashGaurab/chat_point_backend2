@@ -16,7 +16,7 @@ const {passport} = require("./google.outh");
 
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*" }));  
 
 /* ****************************Email Part ***************************************** */
 const transporter = nodemailer.createTransport({
