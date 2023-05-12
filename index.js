@@ -67,7 +67,7 @@ app.use("/user", user);
 app.get('/auth/google',passport.authenticate('google', { scope: ['profile','email'] }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' ,session:false}),function(req, res) {
-    res.redirect("https://stellar-blini-b6e6e0.netlify.app/entry.html")
+    res.redirect("https://incredible-selkie-67b697.netlify.app/entry.html")
   });
 
 
